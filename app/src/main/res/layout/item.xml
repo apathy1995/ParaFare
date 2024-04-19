@@ -20,7 +20,6 @@
         app:cardElevation="8dp">
 
 
-
     <ImageView
         android:id="@+id/location"
         android:layout_width="70dp"

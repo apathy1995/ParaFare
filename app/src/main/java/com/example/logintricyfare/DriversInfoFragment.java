@@ -39,6 +39,7 @@ public class DriversInfoFragment extends Fragment {
         mContext = getActivity().getApplicationContext();
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

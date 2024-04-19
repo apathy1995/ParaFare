@@ -33,3 +33,4 @@ public class MyViewpagerAdapter extends FragmentStateAdapter {
         return 2;
     }
 }
+

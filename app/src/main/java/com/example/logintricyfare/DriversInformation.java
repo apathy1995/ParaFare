@@ -26,3 +26,4 @@ public class DriversInformation {
         this.tricycleIcon = tricycleIcon;
     }
 }
+
