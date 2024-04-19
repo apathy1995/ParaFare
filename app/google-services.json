@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "282131093191",
+    "project_id": "tricyfare-authentication",
+    "storage_bucket": "tricyfare-authentication.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282131093191:android:56f9ecea31e9a2f2ffd0e2",
+        "android_client_info": {
+          "package_name": "com.example.logintricyfare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTznNRqBos9xOg0oTeWxy3AsK7z8D89Ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:282131093191:android:7317d7c1b45f8f49ffd0e2",
+        "android_client_info": {
+          "package_name": "com.example.tricyfare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDTznNRqBos9xOg0oTeWxy3AsK7z8D89Ao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dialog_bg"
+    android:id="@+id/sheet">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtonlinepayment"
+        android:text="Online Payment"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_"
+        android:layout_marginTop="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        android:id="@+id/layoutEdit">
+
+        <Button
+            android:id="@+id/paynow_button"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="45dp"
+            android:text="PayNow"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/material_dynamic_neutral50"/>
+
+        <Button
+            android:id="@+id/paylater_button"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="5dp"
+            android:text="PayLater"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:backgroundTint="@color/material_dynamic_neutral50"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
