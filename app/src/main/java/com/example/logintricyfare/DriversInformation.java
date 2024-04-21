@@ -5,7 +5,6 @@ public class DriversInformation {
     private String driversName;
     private int tricycleIcon;
     private int driversProfile;
-
     private String driversEmail;
     private String driversBodyNumber;
 
@@ -49,7 +48,7 @@ public class DriversInformation {
         this.driversProfile = driversProfile;
     }
 
-    public DriversInformation(String driversName, int tricycleIcon) {
+    public DriversInformation(String driversName, int tricycleIcon, String driversEmail, String driversBodyNumber) {
         this.driversName = driversName;
         this.tricycleIcon = tricycleIcon;
         this.driversEmail = driversEmail;

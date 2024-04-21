@@ -36,17 +36,34 @@
             android:padding="10dp"
             android:layout_gravity="center_horizontal">
 
-
             <TextView
                 android:id="@+id/driversName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="80dp"
                 android:text="Ernesto Macalimba"
                 android:textColor="@color/black_"
                 android:textSize="25sp"
                 android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/driver_bodynumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:text="Body Number: 1234"
+                android:textColor="@color/black_"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/driversEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="80dp"
+                android:text="ernestomacalimba@gmail.com"
+                android:textColor="@color/black_"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
