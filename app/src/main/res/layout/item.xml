@@ -68,21 +68,33 @@
                 android:id="@+id/online_payment"
                 android:layout_width="75dp"
                 android:layout_height="50dp"
-                android:textColor="@color/white"
                 android:layout_marginStart="60dp"
                 android:textSize="15sp"
                 app:cornerRadius="40dp"
                 app:strokeColor="@color/white"
                 app:strokeWidth="2dp"
-                android:backgroundTint="@color/button_background_color"
+                android:backgroundTint="@color/black_"
                 android:drawableLeft="@drawable/baseline_payment_24_white"
+                app:iconTint="@color/white" />
+
+            <Button
+                android:id="@+id/savedTrips_btn"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="0dp"
+                android:textSize="15sp"
+                app:cornerRadius="40dp"
+                app:strokeColor="@color/white"
+                app:strokeWidth="2dp"
+                android:backgroundTint="@color/black_"
+                android:drawableLeft="@drawable/baseline_add_circle_outline_24"
                 app:iconTint="@color/white" />
 
         <TextView
             android:id="@+id/routesPrice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
+            android:layout_marginStart="30dp"
             android:text="₱20.00"
             android:textColor="@color/red"
             android:textSize="25sp"

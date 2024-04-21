@@ -68,12 +68,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
                 payNow.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Intent intent = v.getContext().getPackageManager().getLaunchIntentForPackage("com.youtube");
+                        Intent intent = v.getContext().getPackageManager().getLaunchIntentForPackage("com.gcash");
                         if (intent != null) {
                             v.getContext().startActivity(intent);
                         } else {
                             // Handle case where app is not installed
-                            Toast.makeText(v.getContext(), "YouTube app is not installed", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(v.getContext(), "GCASH is not installed", Toast.LENGTH_SHORT).show();
                         }
                         // Dismiss the AlertDialog after launching the app
                         alertDialog.dismiss();

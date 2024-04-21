@@ -10,6 +10,7 @@
     <color name="red">#DB0000</color>
     <color name="bluedaw">#32303D</color>
     <color name="grey">#E1DDDD</color>
+    <color name="white_line">#1E1E1E</color>
 
 
 </resources>

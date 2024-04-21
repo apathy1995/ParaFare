@@ -42,10 +42,14 @@ public class MainFrameActivity extends AppCompatActivity {
 
     List<Routes> mListRoutes;
     List<DriversInformation> mListDrivers;
+    List<MyTrips> mMyTripsRoutes;
     RecyclerViewAdapter mRecyclerAdapter;
     DriversRecyclerViewAdapter mDriversRecyclerAdapter;
     RecyclerView mRecyclerView;
     RecyclerView mDriversRecyclerView;
+
+    MyTripsRecyclerViewAdapter mMyTripsRecyclerAdapter;
+    RecyclerView mMyTripsRecyclerView;
 
 
     @Override
@@ -54,13 +58,15 @@ public class MainFrameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_frame);
 
 
-
         mRecyclerView = findViewById(R.id.routesRecyclerView);
         mRecyclerAdapter = new RecyclerViewAdapter(getApplicationContext(),mListRoutes);
 
 
         mDriversRecyclerView = findViewById(R.id.driversRecyclerView);
         mDriversRecyclerAdapter = new DriversRecyclerViewAdapter(getApplicationContext(),mListDrivers);
+
+        mMyTripsRecyclerView = findViewById(R.id.myTripsRecyclerView);
+        mMyTripsRecyclerAdapter = new MyTripsRecyclerViewAdapter(getApplicationContext(),mMyTripsRoutes);
 
 
         tabLayout = findViewById(R.id.tab_layout);

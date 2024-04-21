@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LoginTricyfare"
         tools:targetApi="31">
         <activity
+            android:name=".DriversInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
@@ -21,11 +24,9 @@
         <activity
             android:name=".LoginActivity"
             android:exported="false" />
-
         <activity
             android:name=".SignUpActivity"
             android:exported="false" />
-
         <activity
             android:name=".SplashScreen"
             android:exported="true">

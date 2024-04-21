@@ -1,6 +1,8 @@
 package com.example.logintricyfare;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.ColorSpace;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecyclerViewAdapter.MyViewHolder> {
+
 
     Context mContext;
     List<DriversInformation> mDriversList;
@@ -39,6 +42,7 @@ public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecy
     @Override
     public void onBindViewHolder(@NonNull DriversRecyclerViewAdapter.MyViewHolder holder, int position) {
 
+
         holder.txtDriversName.setText(mDriversList.get(position).getDriversName());
         holder.imgTricycle.setImageResource(mDriversList.get(position).getTricycleIcon());
 
@@ -53,6 +57,8 @@ public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecy
 
         private TextView txtDriversName;
         private ImageView imgTricycle;
+        private TextView txtDriversEmail;
+        private TextView txtDriversBodyNumber;
         private CardView driversMainCard;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -61,11 +67,23 @@ public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecy
 
             txtDriversName = itemView.findViewById(R.id.driversName);
             imgTricycle = itemView.findViewById(R.id.tricycleIcon);
+            driversMainCard = itemView.findViewById(R.id.driversMainCard);
 
         }
 
         @Override
         public void onClick(View v) {
+
+            int position = getBindingAdapterPosition();
+            DriversInformation driversItem = mDriversList.get(position);
+
+            Intent detailsScreenData = new Intent(mContext,DriversInfoActivity.class);
+
+            detailsScreenData.putExtra("Name", driversItem.getDriversName());
+            detailsScreenData.putExtra("Drivers Profile", driversItem.getDriversProfile());
+
+            //detailsScreenData.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            mContext.startActivity(detailsScreenData);
 
         }
     }
