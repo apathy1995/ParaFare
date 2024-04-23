@@ -14,10 +14,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.tabs.TabLayout;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class MyTripsFragment extends Fragment {
+
+    private TabLayout tabLayout;
 
     Context mContext;
     List<MyTrips> mMyTripsRoutes;
@@ -37,6 +41,9 @@ public class MyTripsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_my_trips, container, false);
+
+        tabLayout = requireActivity().findViewById(R.id.tab_layout);
+        tabLayout.setVisibility(View.GONE);
 
         mMyTripsRecyclerView = rootView.findViewById(R.id.myTripsRecyclerView);
         mMyTripsRoutes = new ArrayList<>();

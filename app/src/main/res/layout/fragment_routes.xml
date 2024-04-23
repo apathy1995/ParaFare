@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:id="@+id/routesRecyclerView"
         android:padding="16dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="105dp"
         android:visibility="visible"
         android:background="@color/grey"/>
 
