@@ -51,16 +51,16 @@ public class DriversInfoFragment extends Fragment {
 
         fragmentManager = getActivity().getSupportFragmentManager();
 
-        mListDrivers.add(new DriversInformation("Ernesto Macalimba",R.drawable.tricycle_icon,"ernestomacalimba@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Renaldo Santos",R.drawable.tricycle_icon,"renaldosantos@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Ricardo Castro",R.drawable.tricycle_icon,"ricardocastro@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Albert Mendoza",R.drawable.tricycle_icon,"marjhonaligway@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Marjhon Aligway",R.drawable.tricycle_icon,"ernestomacalimba@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Manuel Panganiban",R.drawable.tricycle_icon,"manuelpanganiban@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Florentino Cruz",R.drawable.tricycle_icon,"florentinocruz@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Rufino Francisco",R.drawable.tricycle_icon,"rufinofrancisco@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Ariel Legaspi",R.drawable.tricycle_icon,"ariellegaspi@gmail.com","1234"));
-        mListDrivers.add(new DriversInformation("Ciriaco Ramos Jr.",R.drawable.tricycle_icon,"ciriacoramos@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Ernesto Macalimba",R.drawable.profile_bg,"ernestomacalimba@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Renaldo Santos",R.drawable.profile_bg,"renaldosantos@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Ricardo Castro",R.drawable.profile_bg,"ricardocastro@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Albert Mendoza",R.drawable.profile_bg,"marjhonaligway@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Marjhon Aligway",R.drawable.profile_bg,"ernestomacalimba@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Manuel Panganiban",R.drawable.profile_bg,"manuelpanganiban@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Florentino Cruz",R.drawable.profile_bg,"florentinocruz@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Rufino Francisco",R.drawable.profile_bg,"rufinofrancisco@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Ariel Legaspi",R.drawable.profile_bg,"ariellegaspi@gmail.com","1234"));
+        mListDrivers.add(new DriversInformation("Ciriaco Ramos Jr.",R.drawable.profile_bg,"ciriacoramos@gmail.com","1234"));
 
         mDriversRecyclerAdapter = new DriversRecyclerViewAdapter(getContext(),mListDrivers);
         mDriversRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),1));

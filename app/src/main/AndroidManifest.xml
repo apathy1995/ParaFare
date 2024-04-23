@@ -13,6 +13,9 @@
         android:theme="@style/Theme.LoginTricyfare"
         tools:targetApi="31">
         <activity
+            android:name=".HomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".DriversInfoActivity"
             android:exported="false" />
         <activity

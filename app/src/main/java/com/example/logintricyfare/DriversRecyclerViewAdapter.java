@@ -44,7 +44,7 @@ public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecy
 
 
         holder.txtDriversName.setText(mDriversList.get(position).getDriversName());
-        holder.imgTricycle.setImageResource(mDriversList.get(position).getTricycleIcon());
+        holder.imgDriversProfile.setImageResource(mDriversList.get(position).getDriversProfile());
         holder.txtDriversEmail.setText(mDriversList.get(position).getDriversEmail());
         holder.txtDriversBodyNumber.setText(mDriversList.get(position).getDriversBodyNumber());
 
@@ -59,7 +59,6 @@ public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecy
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private TextView txtDriversName;
-        private ImageView imgTricycle;
         private ImageView imgDriversProfile;
         private TextView txtDriversEmail;
         private TextView txtDriversBodyNumber;
@@ -70,7 +69,7 @@ public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecy
             itemView.setOnClickListener(this);
 
             txtDriversName = itemView.findViewById(R.id.driversName);
-            imgTricycle = itemView.findViewById(R.id.tricycleIcon);
+            imgDriversProfile = itemView.findViewById(R.id.driversProfile);
             txtDriversEmail= itemView.findViewById(R.id.driversEmail);
             txtDriversBodyNumber = itemView.findViewById(R.id.driver_bodynumber);
             driversMainCard = itemView.findViewById(R.id.driversMainCard);
@@ -86,9 +85,9 @@ public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecy
             Intent detailsScreenData = new Intent(mContext,DriversInfoActivity.class);
 
             detailsScreenData.putExtra("Name", driversItem.getDriversName());
-            detailsScreenData.putExtra("Drivers Email", driversItem.getDriversEmail());
-            detailsScreenData.putExtra("Drivers Body Number", driversItem.getDriversBodyNumber());
-            detailsScreenData.putExtra("Tricycle Icon", driversItem.getTricycleIcon());
+            detailsScreenData.putExtra("Email", driversItem.getDriversEmail());
+            detailsScreenData.putExtra("BodyNumber", driversItem.getDriversBodyNumber());
+            detailsScreenData.putExtra("Drivers Profile", driversItem.getDriversProfile());
 
             //detailsScreenData.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             mContext.startActivity(detailsScreenData);

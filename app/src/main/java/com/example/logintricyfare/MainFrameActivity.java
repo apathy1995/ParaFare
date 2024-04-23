@@ -23,6 +23,7 @@ import com.google.android.material.floatingactionbutton.ExtendedFloatingActionBu
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.List;
 
@@ -152,6 +153,16 @@ public class MainFrameActivity extends AppCompatActivity {
                 if (itemId == R.id.nav_pendingpayment) {
                     Toast.makeText(MainFrameActivity.this, "Pending Payment Clicked", Toast.LENGTH_SHORT).show();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new PendingPaymentFragment()).commit();
+                }
+                if (itemId == R.id.nav_home_){
+                    Intent intent = new Intent(MainFrameActivity.this, HomeActivity.class);
+                    startActivity(intent);
+                }
+                if (itemId == R.id.nav_logout){
+                    FirebaseAuth.getInstance().signOut();
+                    Intent loginActivity = new Intent(getApplicationContext(),LoginActivity.class);
+                    startActivity(loginActivity);
+                    finish();
                 }
                 drawer_layout.close();
 
