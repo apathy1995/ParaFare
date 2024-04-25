@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -14,16 +15,22 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
 
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.List;
 
@@ -39,6 +46,7 @@ public class MainFrameActivity extends AppCompatActivity {
     MyViewpagerAdapter myViewpagerAdapter;
 
     FrameLayout frameLayout;
+    ValueEventListener eventListener;
 
 
     List<Routes> mListRoutes;
@@ -48,6 +56,9 @@ public class MainFrameActivity extends AppCompatActivity {
     DriversRecyclerViewAdapter mDriversRecyclerAdapter;
     RecyclerView mRecyclerView;
     RecyclerView mDriversRecyclerView;
+    FirebaseDatabase database;
+    DatabaseReference reference;
+
 
     MyTripsRecyclerViewAdapter mMyTripsRecyclerAdapter;
     RecyclerView mMyTripsRecyclerView;
@@ -58,13 +69,19 @@ public class MainFrameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_frame);
 
+        database = FirebaseDatabase.getInstance();
+        reference = database.getReference();
+
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.wrapper, new DriversInfoFragment())
+                .commit();
 
         mRecyclerView = findViewById(R.id.routesRecyclerView);
         mRecyclerAdapter = new RecyclerViewAdapter(getApplicationContext(),mListRoutes);
 
 
         mDriversRecyclerView = findViewById(R.id.driversRecyclerView);
-        mDriversRecyclerAdapter = new DriversRecyclerViewAdapter(getApplicationContext(),mListDrivers);
+
 
         mMyTripsRecyclerView = findViewById(R.id.myTripsRecyclerView);
         mMyTripsRecyclerAdapter = new MyTripsRecyclerViewAdapter(getApplicationContext(),mMyTripsRoutes);
@@ -170,6 +187,5 @@ public class MainFrameActivity extends AppCompatActivity {
             }
         });
     }
-
 
 }

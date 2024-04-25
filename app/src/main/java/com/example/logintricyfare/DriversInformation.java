@@ -2,50 +2,60 @@ package com.example.logintricyfare;
 
 public class DriversInformation {
 
-    private String driversName;
-    private int driversProfile;
-    private String driversEmail;
-    private String driversBodyNumber;
+    private String fullname, email, bodynumber, phonenumber, image;
 
-    public String getDriversName() {
-        return driversName;
+    public DriversInformation() {
     }
 
-    public void setDriversName(String driversName) {
-        this.driversName = driversName;
+    public DriversInformation(String fullname, String username, String email, String bodynumber, String phonenumber, String password, String image) {
+        this.fullname = fullname;
+        this.email = email;
+        this.bodynumber = bodynumber;
+        this.phonenumber = phonenumber;
+        this.image = image;
+    }
+
+    public String getFullname() {
+        return fullname;
+    }
+
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
 
-    public String getDriversEmail() {
-        return driversEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setDriversEmail(String driversEmail) {
-        this.driversEmail = driversEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getDriversBodyNumber() {
-        return driversBodyNumber;
+    public String getBodynumber() {
+        return bodynumber;
     }
 
-    public void setDriversBodyNumber(String driversBodyNumber) {
-        this.driversBodyNumber = driversBodyNumber;
+    public void setBodynumber(String bodynumber) {
+        this.bodynumber = bodynumber;
     }
 
-    public int getDriversProfile() {
-        return driversProfile;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setDriversProfile(int driversProfile) {
-        this.driversProfile = driversProfile;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
-    public DriversInformation(String driversName, int driversProfile, String driversEmail, String driversBodyNumber) {
-        this.driversName = driversName;
-        this.driversProfile = driversProfile;
-        this.driversEmail = driversEmail;
-        this.driversBodyNumber = driversBodyNumber;
 
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
+
 

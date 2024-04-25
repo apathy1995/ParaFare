@@ -10,14 +10,20 @@
     tools:openDrawer="start"
     tools:context=".MainFrameActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:layout_marginTop="105dp"/>
+        android:id="@+id/wrapper"
+        android:orientation="vertical">
+
+        <include
+            layout="@layout/main_content"/>
 
 
-    <LinearLayout
+    </FrameLayout>
+
+
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -42,7 +48,7 @@
 
     </com.google.android.material.tabs.TabLayout>
 
-    </LinearLayout>
+    </FrameLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:layout_width="match_parent"
@@ -51,14 +57,10 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="match_parent"
         android:id="@+id/frameLayout"
         android:visibility="gone"
         android:layout_weight="1"/>
-
-
-    <include
-        layout="@layout/main_content"/>
 
     <com.google.android.material.navigation.NavigationView
         android:layout_width="300dp"
@@ -70,6 +72,5 @@
         app:dividerInsetStart="60dp"
         app:itemIconTint="@color/black_"
         app:itemTextColor="@color/black_"/>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>

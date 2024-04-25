@@ -7,22 +7,24 @@
     android:layout_height="match_parent"
     tools:context=".ProfileFragment"
     android:orientation="vertical"
-    android:background="@drawable/background"
-    android:gravity="center">
+    android:background="@drawable/background">
+
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="550dp"
+        android:layout_height="wrap_content"
         android:background="@color/white"
-        android:layout_margin="30dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
         app:cardCornerRadius="30dp"
         app:cardElevation="20dp">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_gravity="center_horizontal"
             android:padding="24dp">
 
             <TextView
@@ -46,8 +48,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Elaiza Pugosa"
-                android:id="@+id/user_name"
+                android:hint="FullName"
+                android:id="@+id/user_fullname"
                 android:textAlignment="center"
                 android:textStyle="bold"
                 android:textSize="20sp"
@@ -57,18 +59,27 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="elai@gmail.com"
-                android:id="@+id/driver_email"
+                android:hint="Username"
+                android:textSize="15sp"
+                android:id="@+id/user_username"
                 android:textAlignment="center"
                 android:textColor="@color/black_"
                 android:textStyle="bold"/>
 
-            <ImageView
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:id="@+id/user_email"
+                android:textAlignment="center"
+                android:textColor="@color/black_"
+                android:textStyle="bold"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/black_"
-                android:layout_marginTop="15dp"
-                android:scaleType="fitXY"/>
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -77,27 +88,34 @@
                 android:textAlignment="center"
                 android:textColor="@color/black_"
                 android:textSize="18sp"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
                 android:textStyle="bold"/>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="0919-123-5678"
+                android:hint="Contact Number"
                 android:id="@+id/user_contactnumber"
                 android:textAlignment="center"
                 android:textColor="@color/black_"
                 android:textSize="20sp"
                 android:layout_marginTop="5dp"/>
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/black_"
-                android:layout_marginTop="7dp"
-                android:scaleType="fitXY"/>
+                android:layout_marginTop="5dp" />
 
         </LinearLayout>
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="490dp"
+            android:backgroundTint="@color/material_dynamic_neutral50"
+            android:layout_marginStart="92dp"
+            android:text="Manage Account"/>
 
     </androidx.cardview.widget.CardView>
 

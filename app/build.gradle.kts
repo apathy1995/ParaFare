@@ -45,4 +45,11 @@ dependencies {
     androidTestImplementation(libs.espresso.core)
 
     implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("com.firebaseui:firebase-ui-database:8.0.2")
+    implementation("com.google.firebase:firebase-database:19.3.1")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    implementation("com.squareup.picasso:picasso:2.8")
+    implementation("com.google.android.material:material:1.1.0")
+    implementation("androidx.cardview:cardview:1.0.0")
 }

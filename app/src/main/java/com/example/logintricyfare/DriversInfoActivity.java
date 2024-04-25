@@ -25,10 +25,10 @@ public class DriversInfoActivity extends AppCompatActivity {
         extras = getIntent().getExtras();
 
         if (extras != null){
-            driversName.setText(extras.getString("Name"));
-            driversEmail.setText(extras.getString("Email"));
-            driversBodyNumber.setText(extras.getString("BodyNumber"));
-            driversProfile.setImageResource(extras.getInt("Drivers Profile"));
+            driversName.setText(extras.getString("name"));
+            driversEmail.setText(extras.getString("email"));
+            driversBodyNumber.setText(extras.getString("bodynumber"));
+            driversProfile.setImageResource(extras.getInt("image"));
         }
 
     }
