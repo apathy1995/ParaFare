@@ -16,39 +16,45 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
+import okhttp3.Route;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.MyViewHolder> {
 
     Context mContext;
-    List<Routes> mRoutesList;
+    List<Routes> routesList;
 
     AlertDialog alertDialog;
 
 
-    public RecyclerViewAdapter (Context mContext, List<Routes> mRoutesList){
+    public RecyclerViewAdapter (List<Routes> routesList, Context mContext){
         this.mContext = mContext;
-        this.mRoutesList = mRoutesList;
+        this.routesList = routesList;
     }
 
     @NonNull
     @Override
-    public RecyclerViewAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view;
-        view = LayoutInflater.from(mContext).inflate(R.layout.item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item, parent, false);
+        return new RecyclerViewAdapter.MyViewHolder(view);
 
-        MyViewHolder myViewHolder = new MyViewHolder(view);
-
-        return myViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapter.MyViewHolder holder, int position) {
-        holder.txtRoutesName.setText(mRoutesList.get(position).getRoutesName());
-        holder.txtRoutesDistance.setText(mRoutesList.get(position).getRoutesDistance());
-        holder.txtRoutesPrice.setText(mRoutesList.get(position).getRoutesPrice());
-        holder.imgLocation.setImageResource(mRoutesList.get(position).getLocationIcon());
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
+        Routes model = routesList.get(position);
+        holder.txtRoutesName.setText(model.getRoutesName());
+        holder.txtRoutesDistance.setText(model.getRoutesDistance());
+        holder.txtRoutesPrice.setText(model.getRoutesPrice());
+        Picasso.get().load(model.getImageLoc()).placeholder(R.drawable.location_icon)
+                .into(holder.imgLocation);
         holder.btnOnlinePayment.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,15 +98,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
     @Override
     public int getItemCount() {
-        return mRoutesList.size();
+        return routesList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        private TextView txtRoutesName;
-        private TextView txtRoutesDistance;
-        private TextView txtRoutesPrice;
-        private ImageView imgLocation;
+        TextView txtRoutesName, txtRoutesDistance, txtRoutesPrice;
+        CircleImageView imgLocation;
         private Button btnOnlinePayment;
         private CardView mainCard;
 

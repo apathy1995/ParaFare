@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Routes {
 
-    private String routesName;
-    private String routesDistance;
-    private String routesPrice;
+    private String routesName, routesPrice, routesDistance, imageLoc;
 
-    private int locationIcon;
+    public Routes(){
+
+    }
 
     public String getRoutesName() {
         return routesName;
@@ -39,19 +39,20 @@ public class Routes {
         this.routesPrice = routesPrice;
     }
 
-    public int getLocationIcon() {
-        return locationIcon;
+    public String getImageLoc() {
+        return imageLoc;
     }
 
-    public void setLocationIcon(int locationIcon) {
-        this.locationIcon = locationIcon;
+    public void setImageLoc(String imageLoc) {
+        this.imageLoc = imageLoc;
     }
 
-    public Routes(String routesName, String routesDistance, String routesPrice, int locationIcon) {
+
+    public Routes(String routesName, String routesDistance, String routesPrice, String imageLoc) {
         this.routesName = routesName;
         this.routesDistance = routesDistance;
         this.routesPrice = routesPrice;
-        this.locationIcon = locationIcon;
+        this.imageLoc = imageLoc;
     }
 }
 

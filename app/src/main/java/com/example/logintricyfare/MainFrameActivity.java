@@ -76,8 +76,11 @@ public class MainFrameActivity extends AppCompatActivity {
                 .replace(R.id.wrapper, new DriversInfoFragment())
                 .commit();
 
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.wrapper, new RoutesFragment())
+                .commit();
+
         mRecyclerView = findViewById(R.id.routesRecyclerView);
-        mRecyclerAdapter = new RecyclerViewAdapter(getApplicationContext(),mListRoutes);
 
 
         mDriversRecyclerView = findViewById(R.id.driversRecyclerView);
@@ -170,10 +173,6 @@ public class MainFrameActivity extends AppCompatActivity {
                 if (itemId == R.id.nav_pendingpayment) {
                     Toast.makeText(MainFrameActivity.this, "Pending Payment Clicked", Toast.LENGTH_SHORT).show();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new PendingPaymentFragment()).commit();
-                }
-                if (itemId == R.id.nav_home_){
-                    Intent intent = new Intent(MainFrameActivity.this, HomeActivity.class);
-                    startActivity(intent);
                 }
                 if (itemId == R.id.nav_logout){
                     FirebaseAuth.getInstance().signOut();

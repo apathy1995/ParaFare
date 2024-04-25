@@ -12,7 +12,7 @@
     app:cardCornerRadius="18dp"
     app:contentPadding="5dp"
     android:foreground="?selectableItemBackground"
-    android:background="@color/grey"
+    android:background="@color/white"
     android:clickable="true">
 
     <RelativeLayout

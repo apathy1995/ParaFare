@@ -8,8 +8,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +19,11 @@ import android.view.ViewGroup;
 import com.example.logintricyfare.R;
 import com.example.logintricyfare.RecyclerViewAdapter;
 import com.example.logintricyfare.Routes;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,17 +31,16 @@ import java.util.List;
 public class RoutesFragment extends Fragment {
     
     Context mContext;
-    List<Routes> mListRoutes;
-    RecyclerView mRecyclerView;
-    RecyclerViewAdapter mRecyclerAdapter;
+    private List<Routes> routesInfoList;
+    private FirebaseFirestore fStore;
+    private Routes model;
+    private RecyclerView mRecyclerView;
+    private RecyclerViewAdapter mRecyclerAdapter;
     FragmentManager fragmentManager;
     View rootView;
 
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
+    public RoutesFragment(){
 
-        mContext = getActivity().getApplicationContext();
     }
 
     @Override
@@ -42,26 +48,44 @@ public class RoutesFragment extends Fragment {
                              Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.fragment_routes, container, false);
 
-        mRecyclerView = rootView.findViewById(R.id.routesRecyclerView);
-        mListRoutes = new ArrayList<>();
+        mRecyclerView = (RecyclerView) rootView.findViewById(R.id.routesRecyclerView);
+        fStore = FirebaseFirestore.getInstance();
+        routesInfoList = new ArrayList<>();
 
-        fragmentManager = getActivity().getSupportFragmentManager();
-
-        mListRoutes.add(new Routes("Bolacan - Turo Hangga", "1km - 1 person", "₱20.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - Turo Hangga", "1km - 2 person", "₱30.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - Turo Hangga", "1km - 3 person", "₱45.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - Tollgate", "1.5km - 1 person", "₱30.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - Tollgate", "1.5km - 2 person", "₱40.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - Tollgate", "1.5km - 3 person", "₱45.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - Bocaue Crossing", "2.5km - 1 person", "₱60.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - Bocaue Crossing", "2.5km - 2 person", "₱70.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - Bocaue Crossing", "2.5km - 3 person", "₱75.00",R.drawable.location_icon));
-        mListRoutes.add(new Routes("Bolacan - JIL School", "3.5km - 1 person", "₱60.00",R.drawable.location_icon));
-
-        mRecyclerAdapter = new RecyclerViewAdapter(getContext(),mListRoutes);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),1));
-        mRecyclerView.setAdapter(mRecyclerAdapter);
+        GetRoutesInfo();
 
         return rootView;
+    }
+
+    private void GetRoutesInfo() {
+
+        fStore.collection("routes").get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+            @Override
+            public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                if (!queryDocumentSnapshots.isEmpty()) {
+                    ArrayList<DocumentSnapshot> list = (ArrayList<DocumentSnapshot>) queryDocumentSnapshots.getDocuments();
+                    for (DocumentSnapshot d : list) {
+                        model = d.toObject(Routes.class);
+
+                        routesInfoList.add(model);
+
+                        Log.d("Firestore", "Routes info retrieved: " + model.getRoutesName());
+
+                        mRecyclerAdapter = new RecyclerViewAdapter(routesInfoList, getContext());
+                        mRecyclerView.setAdapter(mRecyclerAdapter);
+
+                        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+                        mRecyclerView.setLayoutManager(layoutManager);
+                    }
+                } else {
+                    Log.d("Firestore", "No routes found.");
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e("Firestore", "Error fetching drivers: " + e.getMessage());
+            }
+        });
     }
 }

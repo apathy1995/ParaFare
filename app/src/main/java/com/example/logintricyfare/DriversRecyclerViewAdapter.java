@@ -58,7 +58,6 @@ public class DriversRecyclerViewAdapter extends RecyclerView.Adapter<DriversRecy
         Picasso.get().load(model.getImage()).placeholder(R.drawable.profile_bg)
                 .into(holder.imgDriversProfile);
 
-
     }
 
     @Override

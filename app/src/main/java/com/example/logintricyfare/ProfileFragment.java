@@ -86,7 +86,6 @@ public class ProfileFragment extends Fragment implements View.OnClickListener{
                             contact_num.setText(contactResult);
 
                         }
-
                     }
                 });
 
