@@ -1,58 +1,81 @@
 package com.example.logintricyfare;
 
 public class MyTrips {
+    String name, userId, key, url, privacy, time, routesName, numberOfPerson, routesPrice;
 
-    private String myTripsRoutesName;
-    private String myTripsRoutesDistance;
-    private String myTripsRoutesCurrentDate;
-    private String myTripsRoutesPrice;
-    private int myTripsLocationIcon;
+    public MyTrips(){
 
-    public String getMyTripsRoutesName() {
-        return myTripsRoutesName;
     }
 
-    public void setMyTripsRoutesName(String myTripsRoutesName) {
-        this.myTripsRoutesName = myTripsRoutesName;
+    public String getName() {
+        return name;
     }
 
-    public String getMyTripsRoutesDistance() {
-        return myTripsRoutesDistance;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setMyTripsRoutesDistance(String myTripsRoutesDistance) {
-        this.myTripsRoutesDistance = myTripsRoutesDistance;
+    public String getUserId() {
+        return userId;
     }
 
-    public String getMyTripsRoutesCurrentDate() {
-        return myTripsRoutesCurrentDate;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public void setMyTripsRoutesCurrentDate(String myTripsRoutesCurrentDate) {
-        this.myTripsRoutesCurrentDate = myTripsRoutesCurrentDate;
+    public String getKey() {
+        return key;
     }
 
-    public String getMyTripsRoutesPrice() {
-        return myTripsRoutesPrice;
+    public void setKey(String key) {
+        this.key = key;
     }
 
-    public void setMyTripsRoutesPrice(String myTripsRoutesPrice) {
-        this.myTripsRoutesPrice = myTripsRoutesPrice;
+    public String getUrl() {
+        return url;
     }
 
-    public int getMyTripsLocationIcon() {
-        return myTripsLocationIcon;
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public void setMyTripsLocationIcon(int myTripsLocationIcon) {
-        this.myTripsLocationIcon = myTripsLocationIcon;
+    public String getPrivacy() {
+        return privacy;
     }
 
-    public MyTrips(String myTripsRoutesName, String myTripsRoutesDistance, String myTripsRoutesCurrentDate, String myTripsRoutesPrice, int myTripsLocationIcon) {
-        this.myTripsRoutesName = myTripsRoutesName;
-        this.myTripsRoutesDistance = myTripsRoutesDistance;
-        this.myTripsRoutesCurrentDate = myTripsRoutesCurrentDate;
-        this.myTripsRoutesPrice = myTripsRoutesPrice;
-        this.myTripsLocationIcon = myTripsLocationIcon;
+    public void setPrivacy(String privacy) {
+        this.privacy = privacy;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    public String getRoutesName() {
+        return routesName;
+    }
+
+    public void setRoutesName(String routesName) {
+        this.routesName = routesName;
+    }
+
+    public String getNumberOfPerson() {
+        return numberOfPerson;
+    }
+
+    public void setNumberOfPerson(String numberOfPerson) {
+        this.numberOfPerson = numberOfPerson;
+    }
+
+    public String getRoutesPrice() {
+        return routesPrice;
+    }
+
+    public void setRoutesPrice(String routesPrice) {
+        this.routesPrice = routesPrice;
     }
 }

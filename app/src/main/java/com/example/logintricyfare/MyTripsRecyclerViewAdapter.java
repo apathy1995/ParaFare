@@ -39,10 +39,7 @@ public class MyTripsRecyclerViewAdapter extends RecyclerView.Adapter<MyTripsRecy
 
     @Override
     public void onBindViewHolder(@NonNull MyTripsRecyclerViewAdapter.MyViewHolder holder, int position) {
-        holder.txtMyTripsRoutesName.setText(mMyTripsList.get(position).getMyTripsRoutesName());
-        holder.txtMyTripsRoutesDistance.setText(mMyTripsList.get(position).getMyTripsRoutesDistance());
-        holder.txtMyTripsRoutesPrice.setText(mMyTripsList.get(position).getMyTripsRoutesPrice());
-        holder.imgMyTripsLocation.setImageResource(mMyTripsList.get(position).getMyTripsLocationIcon());
+
 
     }
 

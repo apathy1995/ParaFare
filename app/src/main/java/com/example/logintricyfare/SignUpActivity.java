@@ -104,6 +104,7 @@ public class SignUpActivity extends AppCompatActivity {
                                 user.put("username",username);
                                 user.put("email", email);
                                 user.put("phoneNumber", phoneNumber);
+                                user.put("password", pass);
                                 documentReference.set(user)
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override

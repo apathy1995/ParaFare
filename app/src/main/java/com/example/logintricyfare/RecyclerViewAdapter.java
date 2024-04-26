@@ -101,29 +101,24 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         return routesList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtRoutesName, txtRoutesDistance, txtRoutesPrice;
         CircleImageView imgLocation;
         private Button btnOnlinePayment;
-        private CardView mainCard;
+
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            itemView.setOnClickListener(this);
+
 
             txtRoutesName = itemView.findViewById(R.id.routesName);
             txtRoutesDistance = itemView.findViewById(R.id.routesDistance);
             txtRoutesPrice = itemView.findViewById(R.id.routesPrice);
             imgLocation = itemView.findViewById(R.id.location);
-            mainCard = itemView.findViewById(R.id.mainCard);
             btnOnlinePayment = itemView.findViewById(R.id.online_payment);
         }
 
-        @Override
-        public void onClick(View v) {
-
-        }
     }
 }
