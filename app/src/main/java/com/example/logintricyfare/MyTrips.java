@@ -1,26 +1,26 @@
 package com.example.logintricyfare;
 
 public class MyTrips {
-    String name, userId, key, url, privacy, time, routesName, numberOfPerson, routesPrice;
+    String fname, username, key, email, phonenumber, time, routesName, numberOfPerson, routesPrice, locationIcon;
 
     public MyTrips(){
 
     }
 
-    public String getName() {
-        return name;
+    public String getFname() {
+            return fname;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFname(String fname) {
+        this.fname = fname;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getKey() {
@@ -31,20 +31,20 @@ public class MyTrips {
         this.key = key;
     }
 
-    public String getUrl() {
-        return url;
+    public String getEmail() {
+        return email;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPrivacy() {
-        return privacy;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setPrivacy(String privacy) {
-        this.privacy = privacy;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
 
     public String getTime() {
@@ -77,5 +77,13 @@ public class MyTrips {
 
     public void setRoutesPrice(String routesPrice) {
         this.routesPrice = routesPrice;
+    }
+
+    public String getLocationIcon() {
+        return locationIcon;
+    }
+
+    public void setLocationIcon(String locationIcon) {
+        this.locationIcon = locationIcon;
     }
 }

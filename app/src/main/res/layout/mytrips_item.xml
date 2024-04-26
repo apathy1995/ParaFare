@@ -41,8 +41,10 @@
                 android:id="@+id/myTrips_routesName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginStart="60dp"
                 android:text="Bolacan - Turo Hangga"
+                android:hint="name"
                 android:textColor="@color/black_"
                 android:textSize="21sp"
                 android:textStyle="bold" />
@@ -52,6 +54,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="60dp"
+                android:hint="numberofperson"
                 android:text="1km - 1 person"
                 android:textColor="@color/blue"
                 android:textSize="20sp"
@@ -70,6 +73,7 @@
                     android:layout_marginTop="0dp"
                     android:textSize="12sp"
                     android:textStyle="bold"
+                    android:hint="time"
                     android:text="Wednesday, June 26, 2024"/>
 
                 <TextView
@@ -78,6 +82,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="30dp"
                     android:text="₱20.00"
+                    android:hint="price"
                     android:textColor="@color/red"
                     android:textSize="25sp"
                     android:textStyle="bold" />

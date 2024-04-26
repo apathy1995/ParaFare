@@ -29,11 +29,10 @@ public class MyTripsActivity extends AppCompatActivity {
     Button button;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference AllMyTrips, UserMyTrips;
-    DatabaseReference reference;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference documentReference;
     MyTrips myTrips;
-    String name, url, privacy, uid;
+    String fname, email, username, phonenumber, locationIcon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,10 +75,11 @@ public class MyTripsActivity extends AppCompatActivity {
                     myTrips.setRoutesName(routes_name);
                     myTrips.setRoutesPrice(routes_price);
                     myTrips.setNumberOfPerson(number_of_person);
-                    myTrips.setName(name);
-                    myTrips.setPrivacy(privacy);
-                    myTrips.setUrl(url);
-                    myTrips.setUserId(uid);
+                    myTrips.setFname(fname);
+                    myTrips.setEmail(email);
+                    myTrips.setUsername(username);
+                    myTrips.setPhonenumber(phonenumber);
+                    myTrips.setLocationIcon(locationIcon);
                     myTrips.setTime(time);
 
                     String id = UserMyTrips.push().getKey();
@@ -88,6 +88,7 @@ public class MyTripsActivity extends AppCompatActivity {
                     String child = AllMyTrips.push().getKey();
                     myTrips.setKey(id);
                     AllMyTrips.child(child).setValue(myTrips);
+
                     Toast.makeText(MyTripsActivity.this,"Saved", Toast.LENGTH_SHORT).show();
 
                 }else{
@@ -105,10 +106,11 @@ public class MyTripsActivity extends AppCompatActivity {
         documentReference.get().addOnCompleteListener((task) -> {
 
             if (task.getResult().exists()){
-                name= task.getResult().getString("name");
-                url = task.getResult().getString("url");
-                privacy = task.getResult().getString("privacy");
-                uid = task.getResult().getString("uid");
+                fname= task.getResult().getString("fname");
+                email = task.getResult().getString("email");
+                phonenumber = task.getResult().getString("phonenumber");
+                username = task.getResult().getString("username");
+                locationIcon = task.getResult().getString("locationIcon");
             }else{
                 Toast.makeText(MyTripsActivity.this, "Error", Toast.LENGTH_SHORT).show();
             }
