@@ -56,9 +56,9 @@ public class MyTripsActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String routes_name = editText.getText().toString();
-                String number_of_person = editText.getText().toString();
-                String routes_price = editText.getText().toString();
+                String routesName = editText.getText().toString();
+                String numberOfPerson = editText.getText().toString();
+                String routesPrice = editText.getText().toString();
 
                 Calendar cdate = Calendar.getInstance();
                 SimpleDateFormat currentdate = new SimpleDateFormat("dd-MMMM-yyyy");
@@ -70,11 +70,11 @@ public class MyTripsActivity extends AppCompatActivity {
 
                 String time = savedate +":"+ savetime;
 
-                if (!TextUtils.isEmpty(routes_name) && !TextUtils.isEmpty(number_of_person) && !TextUtils.isEmpty(routes_price)){
+                if (!TextUtils.isEmpty(routesName) && !TextUtils.isEmpty(numberOfPerson) && !TextUtils.isEmpty(routesPrice)){
 
-                    myTrips.setRoutesName(routes_name);
-                    myTrips.setRoutesPrice(routes_price);
-                    myTrips.setNumberOfPerson(number_of_person);
+                    myTrips.setRoutesName(routesName);
+                    myTrips.setRoutesPrice(routesPrice);
+                    myTrips.setNumberOfPerson(numberOfPerson);
                     myTrips.setFname(fname);
                     myTrips.setEmail(email);
                     myTrips.setUsername(username);

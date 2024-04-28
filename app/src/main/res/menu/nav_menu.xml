@@ -27,9 +27,9 @@
             android:title="My Trips"/>
 
         <item
-            android:id="@+id/nav_pendingpayment"
+            android:id="@+id/nav_reportdriver"
             android:icon="@drawable/baseline_payment_24"
-            android:title="Pending Payment"/>
+            android:title="Report Driver"/>
 
     </group>
 

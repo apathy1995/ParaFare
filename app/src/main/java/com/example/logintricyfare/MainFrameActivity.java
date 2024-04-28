@@ -58,10 +58,8 @@ public class MainFrameActivity extends AppCompatActivity {
     RecyclerView mDriversRecyclerView;
     FirebaseDatabase database;
     DatabaseReference reference;
-
-
-    MyTripsRecyclerViewAdapter mMyTripsRecyclerAdapter;
     RecyclerView mMyTripsRecyclerView;
+    RecyclerView mReportDriverRecyclerView;
 
 
     @Override
@@ -80,6 +78,7 @@ public class MainFrameActivity extends AppCompatActivity {
                 .replace(R.id.wrapper, new RoutesFragment())
                 .commit();
 
+
         mRecyclerView = findViewById(R.id.routesRecyclerView);
 
 
@@ -87,7 +86,9 @@ public class MainFrameActivity extends AppCompatActivity {
 
 
         mMyTripsRecyclerView = findViewById(R.id.myTripsRecyclerView);
-        mMyTripsRecyclerAdapter = new MyTripsRecyclerViewAdapter(getApplicationContext(),mMyTripsRoutes);
+
+
+        mReportDriverRecyclerView = findViewById(R.id.reportDriverRecyclerView);
 
 
         tabLayout = findViewById(R.id.tab_layout);
@@ -170,8 +171,8 @@ public class MainFrameActivity extends AppCompatActivity {
                     Toast.makeText(MainFrameActivity.this, "My Trips Clicked", Toast.LENGTH_SHORT).show();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new MyTripsFragment()).commit();
                 }
-                if (itemId == R.id.nav_pendingpayment) {
-                    Toast.makeText(MainFrameActivity.this, "Pending Payment Clicked", Toast.LENGTH_SHORT).show();
+                if (itemId == R.id.nav_reportdriver) {
+                    Toast.makeText(MainFrameActivity.this, "Report Driver Clicked", Toast.LENGTH_SHORT).show();
                     getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new PendingPaymentFragment()).commit();
                 }
                 if (itemId == R.id.nav_logout){

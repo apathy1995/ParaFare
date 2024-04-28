@@ -6,22 +6,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
-    tools:context=".MyTripsFragment">
+    tools:context=".ReportDriverActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/myTripsRecyclerView"
+        android:id="@+id/reportDriverRecyclerView"
         android:padding="16dp"
         android:layout_marginTop="80dp"
         android:visibility="visible"
         android:background="@color/grey"/>
-    
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/location"
-        android:background="@drawable/baseline_location_pin_24"
+        android:id="@+id/reportdriver_"
+        android:background="@drawable/baseline_report_24"
         android:clickable="true"
         android:scaleType="fitCenter"
         android:layout_marginTop="10dp"
@@ -30,7 +30,7 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/floatingActionBtn"
         android:clickable="true"
         android:layout_gravity="bottom"
         android:layout_marginBottom="25dp"

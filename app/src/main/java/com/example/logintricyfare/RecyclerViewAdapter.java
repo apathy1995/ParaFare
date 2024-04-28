@@ -111,8 +111,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-
-
             txtRoutesName = itemView.findViewById(R.id.routesName);
             txtRoutesDistance = itemView.findViewById(R.id.routesDistance);
             txtRoutesPrice = itemView.findViewById(R.id.routesPrice);
