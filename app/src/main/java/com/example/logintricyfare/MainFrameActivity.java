@@ -79,6 +79,12 @@ public class MainFrameActivity extends AppCompatActivity {
                 .commit();
 
 
+        // Add MyTripsFragment to activity
+        getSupportFragmentManager().beginTransaction()
+                .replace(R.id.mytrips_fragment, new MyTripsFragment())
+                .commit();
+
+
         mRecyclerView = findViewById(R.id.routesRecyclerView);
 
 
@@ -169,11 +175,11 @@ public class MainFrameActivity extends AppCompatActivity {
                 }
                 if (itemId == R.id.nav_mytrips) {
                     Toast.makeText(MainFrameActivity.this, "My Trips Clicked", Toast.LENGTH_SHORT).show();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new MyTripsFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.mytrips_fragment, new MyTripsFragment()).commit();
                 }
                 if (itemId == R.id.nav_reportdriver) {
                     Toast.makeText(MainFrameActivity.this, "Report Driver Clicked", Toast.LENGTH_SHORT).show();
-                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new PendingPaymentFragment()).commit();
+                    getSupportFragmentManager().beginTransaction().replace(R.id.frameLayout, new ReportDriverFragment()).commit();
                 }
                 if (itemId == R.id.nav_logout){
                     FirebaseAuth.getInstance().signOut();

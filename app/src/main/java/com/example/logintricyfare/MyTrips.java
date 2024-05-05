@@ -3,6 +3,19 @@ package com.example.logintricyfare;
 public class MyTrips {
     String fname, username, key, email, phonenumber, time, routesName, numberOfPerson, routesPrice, locationIcon;
 
+    public MyTrips(String fname, String username, String key, String email, String phonenumber, String time, String routesName, String numberOfPerson, String routesPrice, String locationIcon) {
+        this.fname = fname;
+        this.username = username;
+        this.key = key;
+        this.email = email;
+        this.phonenumber = phonenumber;
+        this.time = time;
+        this.routesName = routesName;
+        this.numberOfPerson = numberOfPerson;
+        this.routesPrice = routesPrice;
+        this.locationIcon = locationIcon;
+    }
+
     public MyTrips(){
 
     }

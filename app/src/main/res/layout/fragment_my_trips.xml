@@ -6,16 +6,55 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/grey"
+    android:id="@+id/mytrips_fragment"
     tools:context=".MyTripsFragment">
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/myTripsRecyclerView"
         android:padding="16dp"
+        android:layout_marginBottom="80dp"
         android:layout_marginTop="80dp"
         android:visibility="visible"
         android:background="@color/grey"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Fare:"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"
+                android:textSize="20sp"
+                android:textColor="@color/black_"/>
+
+            <!-- Second TextView (on the right) -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00.00"
+                android:id="@+id/totalfare"
+                android:textSize="20sp"
+                android:textColor="@color/red"
+                android:textStyle="bold"
+                android:layout_marginStart="130dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
     
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="50dp"
@@ -33,7 +72,7 @@
         android:id="@+id/floatingActionButton"
         android:clickable="true"
         android:layout_gravity="bottom"
-        android:layout_marginBottom="25dp"
+        android:layout_marginBottom="90dp"
         android:layout_marginStart="320dp"
         android:backgroundTint="@color/material_dynamic_neutral50"
         android:src="@drawable/baseline_add_24" />

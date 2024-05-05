@@ -12,10 +12,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -24,8 +27,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.squareup.picasso.Picasso;
@@ -35,7 +41,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MyTripsFragment extends Fragment implements View.OnClickListener{
+public class MyTripsFragment extends Fragment implements View.OnClickListener {
 
     private TabLayout tabLayout;
 
@@ -46,6 +52,8 @@ public class MyTripsFragment extends Fragment implements View.OnClickListener{
     DatabaseReference databaseReference;
     RecyclerView mMyTripsRecyclerView;
     CircleImageView imageView;
+    TextView totalFareTextView;
+    Button deletebtn;
 
     Context mContext;
     List<MyTrips> mMyTripsRoutes;
@@ -104,7 +112,7 @@ public class MyTripsFragment extends Fragment implements View.OnClickListener{
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.mytrips_item, parent, false);
                         return new Viewholder_MyTrips(view);
                     }
-        };
+                };
 
         firebaseRecyclerAdapter.startListening();
         mMyTripsRecyclerView.setAdapter(firebaseRecyclerAdapter);
@@ -129,13 +137,13 @@ public class MyTripsFragment extends Fragment implements View.OnClickListener{
 
         reference.get()
                 .addOnCompleteListener((task) -> {
-                    if (task.getResult().exists()){
+                    if (task.getResult().exists()) {
                         String locationIcon = task.getResult().getString("locationIcon");
 
                         Picasso.get().load(locationIcon).into(imageView);
-                    }else {
+                    } else {
                         Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
                     }
-        });
+                });
     }
 }
